@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MyRoutes from './pages/routes/index'
+import MyRoutes from './pages/routes'
 import { BrowserRouter} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <MyRoutes/>
+        <MyRoutes />
       </BrowserRouter>
     );
   }
