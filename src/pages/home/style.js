@@ -1,4 +1,4 @@
-const marginBottomDefault = '10px';
+const marginBottomDefault = '20px';
 export const style = {
   container: {
     flexDirection: 'column',
@@ -15,10 +15,15 @@ export const style = {
     width: '50%',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    },
-    submit: {
-      width: '30%',
-      padding: '10px'
-    }
+    alignItems: 'center'
+  },
+  submit: {
+    width: '30%',
+    padding: '10px',
+    borderColor: '#008bf6',
+    background: 'transparent',
+    borderRadius: '28px',
+    outline: 'none',
+    marginTop: marginBottomDefault
+  }
 }
