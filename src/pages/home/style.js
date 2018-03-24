@@ -4,12 +4,12 @@ export const style = {
     flexDirection: 'column',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    //todo: Adjust height fill screen
+    justifyContent: 'flex-start',
+    height: '100%'
   },
   logo: {
     width: '40%',
-    marginBottom: marginBottomDefault
+    marginTop: '10%'
   },
   form: {
     width: '50%',
