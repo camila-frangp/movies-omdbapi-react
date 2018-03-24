@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import MyRoutes from './pages/routes'
-import { BrowserRouter} from 'react-router-dom';
+import React, {Component} from 'react';
+import Routes from './pages/routes'
+import {BrowserRouter} from 'react-router-dom';
+import './App.css'
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <MyRoutes />
-      </BrowserRouter>
+      <div>
+        <BrowserRouter>
+          <Routes/>
+        </BrowserRouter>
+      </div>
     );
   }
 }
