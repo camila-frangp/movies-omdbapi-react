@@ -1,29 +1,35 @@
-const marginBottomDefault = '20px';
-export const style = {
-  container: {
-    flexDirection: 'column',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    height: '100%'
-  },
-  logo: {
-    width: '40%',
-    marginTop: '10%'
-  },
-  form: {
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center'
-  },
-  submit: {
-    width: '30%',
-    padding: '10px',
-    borderColor: '#008bf6',
-    background: 'transparent',
-    borderRadius: '28px',
-    outline: 'none',
-    marginTop: marginBottomDefault
-  }
-}
+import styled from 'styled-components';
+
+const Container = styled.div `
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+`
+const FormContainer = styled.div `
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+const SubmitButton = styled.input `
+    width: 50%;
+    padding: 10px;
+    border: 2px solid #008bf6;
+    background: transparent;
+    border-radius: 28px;
+    outline: none;
+    margin-top: 30px;
+    color: #008bf6;
+    font-weight: bold;
+    &:hover {
+      background: #0894FF;
+      color: #fff;
+      border: 2px solid transparent;
+
+    }
+`
+
+export {SubmitButton, Container, FormContainer}
+

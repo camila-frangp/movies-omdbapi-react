@@ -9,7 +9,7 @@ const InputCustom = styled.input`
     padding-bottom: 10px;
     text-indent: 35px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-top: 30px;
     background: #e8e8e8;
     border-radius: 28px;
     border-color: transparent;
@@ -18,6 +18,13 @@ const InputCustom = styled.input`
     background-position: 6px;
     box-shadow: 0 2px 5px;
     outline: none;
+    &:hover{
+      background: #dedede;
+      background-image: url(${IconSeach});
+      background-repeat: no-repeat;
+      background-position: 6px;
+    }
+    
 `;
 
 export {Container, InputCustom};
