@@ -9,7 +9,7 @@ const InputCustom = styled.input`
     padding-bottom: 10px;
     text-indent: 35px;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 60px;
     background: #e8e8e8;
     border-radius: 28px;
     border-color: transparent;

@@ -7,13 +7,13 @@ const Container = styled.div `
     justify-content: center;
     height: 100%;
 `
-const FormContainer = styled.div `
+const FormContainer = styled.form `
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
-const SubmitButton = styled.input `
+const SubmitButton = styled.button`
     width: 50%;
     padding: 10px;
     border: 2px solid #008bf6;
