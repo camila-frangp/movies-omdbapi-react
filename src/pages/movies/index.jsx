@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
-
+import {Loading} from '../../components'
+import {connect} from 'react-redux';
+import {Container, Header} from './style'
 class Index extends Component {
   render() {
+    const {movies} = this.props;
+    
     return (
-      <div >
+      <Header>
+        <Loading isShow={movies.isFetching}/>
+        <Container>
         <p>Movies</p>
-      </div>
+      </Container>
+      </Header>
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    movies: state.movies
+  }
+}
 
-export default Index;
+export default connect(mapStateToProps, null)(Index);
