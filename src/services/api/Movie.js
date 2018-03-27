@@ -3,7 +3,7 @@ import Api, {API_KEY} from '../api';
 export default class Movie {
   
   static searchMovieList = (movie) => {
-    Api.get('',{
+    return Api.get('', {
       params: {
         apikey: API_KEY,
         s: movie
