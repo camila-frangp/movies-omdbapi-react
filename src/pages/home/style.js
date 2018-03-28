@@ -6,6 +6,7 @@ const Container = styled.div `
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-color: #e3f0ff;
 `
 const FormContainer = styled.form `
     width: 50%;

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import {Loading} from '../../components'
+import {Loading, SearchHead} from '../../components'
 import {connect} from 'react-redux';
-import {Container, Header} from './style'
+import {Container} from './style'
 class Index extends Component {
   render() {
     const {movies} = this.props;
     
     return (
-      <Header>
+      <Container>
         <Loading isShow={movies.isFetching}/>
-        <Container>
-        <p>Movies</p>
+        <SearchHead />
       </Container>
-      </Header>
     );
   }
 }

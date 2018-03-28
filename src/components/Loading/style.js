@@ -1,28 +1,35 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
     position: absolute;
+    display: flex;
+    left: 0px;
+    top: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
-    top:0;
-        left:0;
-    background-color: rgba(0,0,0,0.2);
-    z-index: 999;
-    text-align:center;
+    padding: 0;
+    visibility: ${props => props.isShow ? 'hidden' : 'visible'}
 `
 
+const spinAnimation = keyframes`
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+`
 const Loader = styled.div`
+    position: absolute;
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
     border-radius: 50%;
-    top: 40%;
-    left: 45%;
     width: 120px;
     height: 120px;
-    position: absolute;
-    animation: spin 2s linear infinite;
+    animation: ${spinAnimation} 2s linear infinite;
 `
 
 export {Loader, Container}

@@ -6,8 +6,8 @@ export default class Loading extends Component {
   
   render() {
     return (
-      <Container hidden={!this.props.isShow}>
-        <Loader/>
+      <Container isShow={!this.props.isShow}>
+        <Loader />
       </Container>
     )
   }
