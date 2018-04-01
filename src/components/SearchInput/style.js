@@ -1,8 +1,9 @@
 import IconSeach from '../../assets/search.svg';
 import styled from 'styled-components';
+import {gray, white} from './../../util/colors';
 
 const Container = styled.div`
-  width: 100%;
+    width: 100%;
 `;
 const InputCustom = styled.input`
     ${props => props.offMargin ? `
@@ -15,7 +16,7 @@ const InputCustom = styled.input`
     padding-top: 10px;
     padding-bottom: 10px;
     text-indent: 35px;
-    background: #e8e8e8;
+    background: ${white};
     border-radius: 28px;
     border-color: transparent;
     background-image: url(${IconSeach});
@@ -24,12 +25,12 @@ const InputCustom = styled.input`
     box-shadow: 0 2px 5px;
     outline: none;
     &:hover{
-      background: #dedede;
+      background: ${gray};
       background-image: url(${IconSeach});
       background-repeat: no-repeat;
       background-position: 6px;
     }
-    
+   
 `;
 
 export {Container, InputCustom};

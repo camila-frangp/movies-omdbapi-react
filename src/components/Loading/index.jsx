@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {Container, Loader} from './style'
 
-export default class Loading extends Component {
-  
-  render() {
+export default function Loading (props){
+   
     return (
-      <Container isShow={!this.props.isShow}>
+      <Container isShow={!props.isShow}>
         <Loader />
       </Container>
     )
-  }
 }
 Loading.propTypes = {
   isShow: PropTypes.bool

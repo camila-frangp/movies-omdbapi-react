@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Container, InputCustom} from "./style";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 function SearchInput(props) {
   
   return (
     <Container>
       <InputCustom offMargin={props.offMargin} name="inputSearch" value={props.value}
              onChange={e => props.onChangeInput(e.target.name, e.target.value)}
-             placeholder={props.hint} type='text'/>
+             placeholder={props.hint} type="text" />
       
     </Container>
   )
