@@ -4,7 +4,7 @@ const API_KEY = 'c3028ca3';
 
 const api = axios.create({
   baseURL: URL,
-  timeout: 1000
+  timeout: 10000
 });
 
 export {API_KEY};

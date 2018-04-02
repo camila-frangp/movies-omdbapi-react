@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-
+import {primaryColor, background, secondColor, white} from './../../util/colors';
 const Container = styled.div `
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-color: ${background};
 `
 const FormContainer = styled.form `
     width: 50%;
@@ -16,16 +17,16 @@ const FormContainer = styled.form `
 const SubmitButton = styled.button`
     width: 50%;
     padding: 10px;
-    border: 2px solid #008bf6;
+    border: 2px solid ${primaryColor};
     background: transparent;
     border-radius: 28px;
     outline: none;
     margin-top: 30px;
-    color: #008bf6;
+    color: ${primaryColor};
     font-weight: bold;
     &:hover {
-      background: #0894FF;
-      color: #fff;
+      background: ${secondColor};
+      color: ${white};
       border: 2px solid transparent;
 
     }

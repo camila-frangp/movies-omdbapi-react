@@ -15,16 +15,16 @@ function movies(state = initialState, action) {
       }
     case RECEIVER_MOVIES_LIST:
       return {
-        ...state,
+        ...action.movies,
         isFetching: false,
-        ...action.movies
+        Error: null,
         
       }
     case RECEIVER_MOVIES_LIST_ERROR:
       return{
+        ...action.movies,
         isFetching: false,
-        Response: false,
-        ...action.movies
+        Response: false
       }
       
     default:
