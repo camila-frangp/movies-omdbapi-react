@@ -7,7 +7,7 @@ function SearchInput(props) {
     <Container>
       <InputCustom offMargin={props.offMargin} name="inputSearch" value={props.value}
              onChange={e => props.onChangeInput(e.target.name, e.target.value)}
-             placeholder={props.hint} type="text" />
+             placeholder={props.hint} type="text" onKeyPress={props.onKeyPress}/>
       
     </Container>
   )

@@ -2,18 +2,15 @@ import styled from 'styled-components';
 import {blue} from './../../util/colors';
 
 const Container = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-    justify-content: flex-start;
-    flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 30%;
+  grid-gap: 10px;
+  justify-items: center;
+
 `
 const Item = styled.div`
-  width: 20%;
-  padding: 15px;
-  background: ${blue}
-  height: 40%;
+  
   `
 
 

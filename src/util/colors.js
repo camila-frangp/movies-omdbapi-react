@@ -1,7 +1,7 @@
 
 export const primaryColor = '#008bf6'
 export const secondColor = '#0894FF'
-export const background = '#e3f0ff'
+export const background = '#fff'
 export const gray = '#ededed'
 export const white = '#fff'
 export const red = '#b71845'

@@ -1,4 +1,5 @@
 import styled, {keyframes} from 'styled-components';
+import {gray} from './../../util/colors';
 
 const Container = styled.div`
     position: absolute;
@@ -6,6 +7,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background: ${gray};
     width: 100%;
     height: 100%;
     visibility: ${props => props.isShow ? 'hidden' : 'visible'}

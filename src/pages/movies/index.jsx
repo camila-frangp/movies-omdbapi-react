@@ -3,6 +3,7 @@ import {Loading, MovieGrid, SearchInput} from '../../components'
 import {connect} from 'react-redux';
 import {Body, Container, Header, LogoHeader, SearchHeader} from './style'
 import Logo from '../../assets/logo-top.png';
+import {getMovieList} from "../../actions/movies";
 
 class Index extends Component {
   
@@ -14,6 +15,17 @@ class Index extends Component {
     this.setState({[name]: value});
   }
   
+  searchMovie = () => {
+    this.props.moviesList(this.state.inputSearch);
+  }
+  
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      this.searchMovie();
+    }
+  }
+  
+ 
   
   render() {
     const {movies} = this.props;
@@ -25,7 +37,7 @@ class Index extends Component {
             <img style={{width: '100%'}} src={Logo}/>
           </LogoHeader>
           <SearchHeader>
-            <SearchInput onChangeInput={this.onChangeInput} offMargin/>
+            <SearchInput onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput} offMargin/>
           </SearchHeader>
         </Header>
         <Body>
@@ -45,4 +57,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(Index);
+function mapDispatchToProps(dispatch) {
+  return {
+    moviesList: (movie) => dispatch(getMovieList(movie))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

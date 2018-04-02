@@ -4,15 +4,19 @@ import {background} from './../../util/colors';
 const Container = styled.div `
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 `
 const Header = styled.div`
-    height: 20%;
-    width: 100%;
+    order: 1;
+    padding: 1%;
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: ${background};
+    height: 10%;
+    width: 100%;
 `
 const LogoHeader = styled.div`
     padding-top: 10px;
@@ -26,9 +30,12 @@ const SearchHeader = styled.div`
 `
 
 const Body = styled.div`
+    order: 2;
+    margin: 10px;
     height: 100%;
     width: 100%;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 `
 
