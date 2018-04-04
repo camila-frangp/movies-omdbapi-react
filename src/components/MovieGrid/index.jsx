@@ -1,17 +1,20 @@
-import React from 'react';
-import {Container, Item} from './style';
+import React, {Component} from 'react';
+import {Container, Description, Item, MovieCover, Text} from './style';
 
-function MovieGrid(props) {
+export default function MovieGrid (props){
   
-  return (
-    <Container>
+ 
+    return (
+      <Container>
         {props.list.map(item =>
           <Item key={item.imdbID}>
-            <img style={{width: '100%', height: '100%'}} src={item.Poster}/>
+            <MovieCover src={item.Poster}/>
+            
+              <Description>
+                <Text>{item.Title}</Text>
+              </Description>
           </Item>
         )}
-    </Container>
-  )
+      </Container>
+    )
 }
-
-export default MovieGrid;
