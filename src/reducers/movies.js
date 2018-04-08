@@ -1,4 +1,4 @@
-import {REQUEST, RECEIVER_MOVIES_LIST_ERROR, RECEIVER_MOVIES_LIST} from '../actions/movies'
+import {REQUEST, RECEIVER_MOVIES_LIST_ERROR, RECEIVER_MOVIES_LIST, RECEIVER_MOVIE_ITEM} from '../actions/movies'
 
 const initialState = {
   Response: '',
@@ -26,7 +26,13 @@ function movies(state = initialState, action) {
         isFetching: false,
         Response: false
       }
-      
+    case RECEIVER_MOVIE_ITEM:
+      return{
+        ...state,
+        item: {...action.movie},
+        isFetching: false,
+        Error: null
+      }
     default:
       return state;
   }
