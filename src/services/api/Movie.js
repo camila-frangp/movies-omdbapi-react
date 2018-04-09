@@ -11,4 +11,13 @@ export default class Movie {
     }).then(response => response.data)
       .catch(error => console.log(error));
   }
+  static searchMovieItem = (id) => {
+    return Api.get('', {
+      params: {
+        apikey: API_KEY,
+        i: id
+      }
+    }).then(response => response.data)
+      .catch(error => console.log(error));
+  }
 }

@@ -3,7 +3,7 @@ import {Loading, MovieGrid, SearchInput} from '../../components'
 import {connect} from 'react-redux';
 import {Body, Container, Header, LogoHeader, SearchHeader} from './style'
 import Logo from '../../assets/logo-top.png';
-import {getMovieList} from "../../actions/movies";
+import {getMoviesList} from "../../actions/movies";
 
 class Index extends Component {
   
@@ -25,7 +25,9 @@ class Index extends Component {
     }
   }
   
- 
+ onItemClick = (e, item) => {
+   this.props.history.push(`/movies/${item.imdbID}`);
+ }
   
   render() {
     const {movies} = this.props;
@@ -43,7 +45,7 @@ class Index extends Component {
         <Body>
         {
           movies.Search &&
-          <MovieGrid list={movies.Search}/>
+          <MovieGrid list={movies.Search} onItemClick={this.onItemClick}/>
         }
         </Body>
       </Container>
@@ -59,7 +61,7 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    moviesList: (movie) => dispatch(getMovieList(movie))
+    moviesList: (movie) => dispatch(getMoviesList(movie))
   }
 }
 

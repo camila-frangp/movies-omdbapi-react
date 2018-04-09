@@ -18,7 +18,7 @@ const configStore = () => {
     )
   )
   store.subscribe(() => {
-    saveState(store.getState())
+    saveState({movies: store.getState().movies});
   });
   return store;
 }

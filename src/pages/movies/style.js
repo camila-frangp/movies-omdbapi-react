@@ -13,7 +13,6 @@ const Header = styled.div`
     flex-direction: row;
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: ${background};
     height: 10%;
     width: 100%;
@@ -21,11 +20,10 @@ const Header = styled.div`
 const LogoHeader = styled.div`
     padding-top: 10px;
     padding-left: 10px;
-    flex-grow: 0;
     padding-right: 1%;
 `
 const SearchHeader = styled.div`
-    flex-grow: 1;
+    width: 100%;
     padding-right: 10px;
 `
 

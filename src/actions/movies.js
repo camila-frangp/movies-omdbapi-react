@@ -3,6 +3,7 @@ import Movie from '../services/api/Movie';
 export const REQUEST = 'REQUEST';
 export const RECEIVER_MOVIES_LIST = 'RECEIVER_MOVIES_LIST';
 export const RECEIVER_MOVIES_LIST_ERROR = 'RECEIVER_MOVIES_LIST_ERROR';
+export const RECEIVER_MOVIE_ITEM = 'RECEIVER_MOVIE_ITEM';
 
 export const startRequest = () => ({
   type: REQUEST
@@ -19,9 +20,21 @@ export const movieListError = (error) => ({
   error
 });
 
-export const getMovieList = (movie) => dispatch => {
+export const movieItem = (movie) => ({
+  type: RECEIVER_MOVIE_ITEM,
+  movie
+});
+
+export const getMoviesList = (movie) => dispatch => {
   dispatch(startRequest());
   Movie.searchMovieList(movie)
     .then(response => dispatch(movieList(response)))
     .catch(error => dispatch(movieListError({error: 'Error'})));
 }
+export const getMovieItem = (idImdb) => dispatch => {
+  dispatch(startRequest());
+  Movie.searchMovieItem(idImdb)
+    .then(response => dispatch(movieItem(response)))
+    .catch(error => dispatch(movieListError({error: 'Error'})))
+}
+
