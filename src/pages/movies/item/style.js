@@ -29,14 +29,14 @@ const Header = styled.div`
    color: ${white}
 `
 const Cover = styled.div`
-  object-fit: cover;
-  object-position: center;
+  width: 30%;
   `
 const Description = styled.div`
   display: flex;
   flex-flow: column wrap;
   padding: 10px;
-  font-size: x-large;
+  font-size: large;
+  width: 100%;
 `
 const Title = styled.div`
   padding-left: 20px;

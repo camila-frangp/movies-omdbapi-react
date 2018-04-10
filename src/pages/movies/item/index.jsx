@@ -1,26 +1,44 @@
 import React, {Component} from 'react';
-import {Loading} from '../../../components'
+import {Header as SearchHeader, Loading} from '../../../components'
 import {
   Awards,
   Container,
   Cover,
   Description,
-  Title,
+  Header,
   LineRateImdb,
   MetascoreContainer,
   MetascoreLabel,
+  Name,
   Page,
   Plot,
   Root,
   TextSmall,
-  Name,
-  Header,
+  Title,
   Year
 } from './style';
 import {connect} from 'react-redux';
-import {getMovieItem} from '../../../actions/movies';
+import {getMovieItem, getMoviesList} from '../../../actions/movies';
 
 class Index extends Component {
+  
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      this.searchMovie();
+      this.props.history.goBack();
+    }
+  }
+  
+  searchMovie = () => {
+    this.props.moviesList(this.state.inputSearch);
+  }
+  
+  state = {
+    inputSearch: ''
+  }
+  onChangeInput = (name, value) => {
+    this.setState({[name]: value});
+  }
   
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -37,6 +55,7 @@ class Index extends Component {
         {item &&
         <Page>
           <Header>
+            <SearchHeader onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
             <Title>
               <Name>{item.Title} </Name>
               <Year>({item.Year})</Year>
@@ -60,7 +79,7 @@ class Index extends Component {
           </Header>
           <Container>
             <Cover>
-              <img src={item.Poster}/>
+              <img style={{width: '100%', objectFit: 'cover', objectPosition: 'center'}} src={item.Poster}/>
             </Cover>
             <Description>
               <Plot>{item.Plot}</Plot>
@@ -102,7 +121,9 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getMovieItem: (id) => dispatch(getMovieItem(id))
+    getMovieItem: (id) => dispatch(getMovieItem(id)),
+    moviesList: (movie) => dispatch(getMoviesList(movie))
+  
   }
 }
 

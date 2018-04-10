@@ -7,26 +7,6 @@ const Container = styled.div `
     display: flex;
     flex-flow: row wrap;
 `
-const Header = styled.div`
-    order: 1;
-    padding: 1%;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    background-color: ${background};
-    height: 10%;
-    width: 100%;
-`
-const LogoHeader = styled.div`
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 1%;
-`
-const SearchHeader = styled.div`
-    width: 100%;
-    padding-right: 10px;
-`
-
 const Body = styled.div`
     order: 2;
     margin: 10px;
@@ -38,5 +18,5 @@ const Body = styled.div`
 `
 
 
-export {Container, Header, Body, LogoHeader, SearchHeader}
+export {Container, Body}
 
