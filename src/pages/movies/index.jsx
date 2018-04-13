@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import {
   Loading,
   MovieGrid,
-  Header
+  Header,
+  NotFound
 } from '../../components'
 import {
   Body,
-  Container
+  Container,
+  Root
 } from './style'
 import { getMoviesList } from "../../actions/movies";
 
@@ -38,16 +40,20 @@ class Index extends Component {
   render() {
     const {movies} = this.props;
     return (
+      <Root>
       <Container>
         <Loading isShow={movies.isFetching}/>
         <Header onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
         <Body>
         {
-          movies.Search &&
-          <MovieGrid list={movies.Search} onItemClick={this.onItemClick}/>
+          movies.Search ?
+            <MovieGrid list={movies.Search} onItemClick={this.onItemClick}/>
+            :
+            <NotFound message={movies.Error}/>
         }
         </Body>
       </Container>
+      </Root>
     );
   }
 }

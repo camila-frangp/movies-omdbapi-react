@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     order: 1;
-    padding-top: 2%;
-    padding-bottom: 2%;
     flex-direction: row;
     display: flex;
     align-items: center;

@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { NotFound as NotFoundComponent } from '../../components';
 
 class NotFound extends Component {
-  render(){
+  render() {
     return (
-      <div>
-        Not found. Don't worry about it
-      </div>
-    )
+      <NotFoundComponent message="Page not found" />
+    );
   }
 }
 

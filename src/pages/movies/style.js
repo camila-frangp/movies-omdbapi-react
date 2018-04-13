@@ -1,15 +1,23 @@
 import styled from 'styled-components';
+import { secondGray, white } from '../../util/colors';
 
 const Container = styled.div`
     height: 100%;
-    width: 100%;
+    width: 90%;
     display: flex;
+    background: ${white}
     flex-flow: row wrap;
+`;
+const Root = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: ${secondGray}
 `;
 const Body = styled.div`
     order: 2;
-    margin: 10px;
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -17,5 +25,5 @@ const Body = styled.div`
 `;
 
 
-export { Container, Body };
+export { Container, Body, Root };
 
