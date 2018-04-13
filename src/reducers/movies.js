@@ -2,8 +2,12 @@ import { REQUEST, RECEIVER_MOVIES_LIST_ERROR, RECEIVER_MOVIES_LIST, RECEIVER_MOV
 
 const initialState = {
   Response: '',
-  Search: [],
+  Search: null,
   totalResults: '',
+  Error: '',
+  item: {
+    Response: '',
+  },
 };
 
 function movies(state = initialState, action) {
@@ -15,10 +19,9 @@ function movies(state = initialState, action) {
       };
     case RECEIVER_MOVIES_LIST:
       return {
+        item: state.item,
         ...action.movies,
         isFetching: false,
-        Error: null,
-
       };
     case RECEIVER_MOVIES_LIST_ERROR:
       return {
@@ -31,7 +34,6 @@ function movies(state = initialState, action) {
         ...state,
         item: { ...action.movie },
         isFetching: false,
-        Error: null,
       };
     default:
       return state;

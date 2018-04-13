@@ -1,18 +1,30 @@
 import styled from 'styled-components';
-import { primaryColor, primaryGray, secondGray, white } from './../../../util/colors';
+import {
+  primaryColor,
+  primaryGray,
+  secondGray,
+  white,
+} from './../../../util/colors';
 
 const Root = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   background: ${secondGray}
+`;
+const RootSecond = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: start;
   `;
 const Page = styled.div`
   width: 90%;
@@ -60,9 +72,7 @@ const LineRateImdb = styled.div`
    margin-bottom: 1%;
    margin-top: 1%;
    font-size: large;
-
 `;
-
 const MetascoreContainer = styled.div`
   display: inline-block;
   margin-left: 80px;
@@ -81,10 +91,14 @@ const Plot = styled.p`
 `;
 const Awards = styled.div`
   background: ${primaryColor}
-  width: 100%;
+  width: 90%;
   color: ${white}
 `;
-
+const ContainerSearchHeader = styled.div`
+  padding-bottom: 2%;
+  padding-top: 2%;
+  background: ${white}
+`;
 export {
   Container,
   Cover,
@@ -101,4 +115,6 @@ export {
   Root,
   Page,
   Header,
+  ContainerSearchHeader,
+  RootSecond,
 };

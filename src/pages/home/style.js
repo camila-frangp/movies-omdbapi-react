@@ -29,7 +29,6 @@ const SubmitButton = styled.button`
       background: ${secondColor};
       color: ${white};
       border: 2px solid transparent;
-
     }
 `;
 

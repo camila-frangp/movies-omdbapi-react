@@ -18,14 +18,12 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-   width: 100%;
-   height: 80%;
+  width: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   &:hover {
-    transition: all .5s;
-    transform: scale(1.05yarn );
     border: 1px solid ${primaryColor};
   }
   

@@ -29,12 +29,12 @@ export const getMoviesList = movie => (dispatch) => {
   dispatch(startRequest());
   Movie.searchMovieList(movie)
     .then(response => dispatch(movieList(response)))
-    .catch(error => dispatch(movieListError({ error: 'Error' })));
+    .catch(error => dispatch(movieListError({ error })));
 };
 export const getMovieItem = idImdb => (dispatch) => {
   dispatch(startRequest());
   Movie.searchMovieItem(idImdb)
     .then(response => dispatch(movieItem(response)))
-    .catch(error => dispatch(movieListError({ error: 'Error' })));
+    .catch(error => dispatch(movieListError({ error })));
 };
 
