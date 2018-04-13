@@ -1,9 +1,15 @@
-import React, {Component} from 'react';
-import {Loading, MovieGrid, SearchInput} from '../../components'
-import {connect} from 'react-redux';
-import {Body, Container, Header, LogoHeader, SearchHeader} from './style'
-import Logo from '../../assets/logo-top.png';
-import {getMoviesList} from "../../actions/movies";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  Loading,
+  MovieGrid,
+  Header
+} from '../../components'
+import {
+  Body,
+  Container
+} from './style'
+import { getMoviesList } from "../../actions/movies";
 
 class Index extends Component {
   
@@ -34,14 +40,7 @@ class Index extends Component {
     return (
       <Container>
         <Loading isShow={movies.isFetching}/>
-        <Header>
-          <LogoHeader>
-            <img style={{width: '100%'}} src={Logo}/>
-          </LogoHeader>
-          <SearchHeader>
-            <SearchInput onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput} offMargin/>
-          </SearchHeader>
-        </Header>
+        <Header onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
         <Body>
         {
           movies.Search &&

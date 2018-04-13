@@ -1,5 +1,5 @@
-import styled, {keyframes} from 'styled-components';
-import {gray} from './../../util/colors';
+import styled, { keyframes } from 'styled-components';
+import { gray } from './../../util/colors';
 
 const Container = styled.div`
     position: absolute;
@@ -11,8 +11,8 @@ const Container = styled.div`
     background: ${gray};
     width: 100%;
     height: 100%;
-    visibility: ${props => props.isShow ? 'hidden' : 'visible'}
-`
+    visibility: ${props => (props.isShow ? 'hidden' : 'visible')}
+`;
 
 const spinAnimation = keyframes`
     0% {
@@ -21,7 +21,7 @@ const spinAnimation = keyframes`
     100% {
       transform: rotate(360deg);
     }
-`
+`;
 const Loader = styled.div`
     position: absolute;
     border: 16px solid #f3f3f3; /* Light grey */
@@ -30,6 +30,6 @@ const Loader = styled.div`
     width: 120px;
     height: 120px;
     animation: ${spinAnimation} 2s linear infinite;
-`
+`;
 
-export {Loader, Container}
+export { Loader, Container };

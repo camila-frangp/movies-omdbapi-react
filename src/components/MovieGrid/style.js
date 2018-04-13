@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {grayTransparent, primaryColor} from './../../util/colors';
+import { grayTransparent, primaryColor } from './../../util/colors';
 
 const Container = styled.div`
   display: grid;
@@ -15,46 +15,28 @@ const Container = styled.div`
   @media only screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-`
+`;
 
 const Item = styled.div`
-  width: 100%;
-  height: 80%;
+   width: 100%;
+   height: 80%;
   display: flex;
   flex-direction: column;
   position: relative;
   &:hover {
-    transition-delay: .2s;
-		width: 100%;
-		height: 90%;
+    transition: all .5s;
+    transform: scale(1.05yarn );
     border: 1px solid ${primaryColor};
-    transform: translateY(-10%) translateX(1%);
-		transition-duration: 1s;
-  }
-  @media only screen and (min-width: 600px) {
-     width: 100%;
-     height: 80%;
-     &:hover {
-  		width: 100%;
-	  	height: 100%;
-	  }
-  }
-  @media only screen and (min-width: 768px) {
-    width: 100%;
-    height: 80%;
-    &:hover {
-  		width: 100%;
-	  	height: 100%;
-	  }
   }
   
-  `
+  
+  `;
 const MovieCover = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-`
+`;
 
 const Description = styled.div`
   position: absolute;
@@ -71,13 +53,13 @@ const Description = styled.div`
     background: ${grayTransparent};
     opacity: 1;
   }
-`
+`;
 
 const Text = styled.p`
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
   text-align: center;
-`
+`;
 
-export {Container, Item, Description, MovieCover, Text}
+export { Container, Item, Description, MovieCover, Text };
