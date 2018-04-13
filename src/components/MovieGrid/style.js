@@ -25,7 +25,7 @@ const Item = styled.div`
   position: relative;
   &:hover {
     transition: all .5s;
-    transform: scale(1.05);
+    transform: scale(1.05yarn );
     border: 1px solid ${primaryColor};
   }
   
