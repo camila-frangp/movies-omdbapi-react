@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {grayTransparent, primaryColor} from './../../util/colors';
+import { grayTransparent, primaryColor } from './../../util/colors';
 
 const Container = styled.div`
   display: grid;
@@ -15,7 +15,7 @@ const Container = styled.div`
   @media only screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-`
+`;
 
 const Item = styled.div`
    width: 100%;
@@ -30,13 +30,13 @@ const Item = styled.div`
   }
   
   
-  `
+  `;
 const MovieCover = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-`
+`;
 
 const Description = styled.div`
   position: absolute;
@@ -53,13 +53,13 @@ const Description = styled.div`
     background: ${grayTransparent};
     opacity: 1;
   }
-`
+`;
 
 const Text = styled.p`
   word-wrap: break-word;
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
   text-align: center;
-`
+`;
 
-export {Container, Item, Description, MovieCover, Text}
+export { Container, Item, Description, MovieCover, Text };

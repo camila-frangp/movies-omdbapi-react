@@ -1,8 +1,15 @@
-import React, {Component} from 'react';
-import {Loading, MovieGrid, Header} from '../../components'
-import {connect} from 'react-redux';
-import {Body, Container} from './style'
-import {getMoviesList} from "../../actions/movies";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  Loading,
+  MovieGrid,
+  Header
+} from '../../components'
+import {
+  Body,
+  Container
+} from './style'
+import { getMoviesList } from "../../actions/movies";
 
 class Index extends Component {
   

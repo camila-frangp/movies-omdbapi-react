@@ -1,19 +1,20 @@
 import styled from 'styled-components';
-import {primaryColor, background, secondColor, white} from './../../util/colors';
-const Container = styled.div `
+import { primaryColor, background, secondColor, white } from './../../util/colors';
+
+const Container = styled.div`
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
     height:100%;
     background-color: ${background};
-`
-const FormContainer = styled.form `
+`;
+const FormContainer = styled.form`
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-`
+`;
 const SubmitButton = styled.button`
     width: 50%;
     padding: 10px;
@@ -30,7 +31,7 @@ const SubmitButton = styled.button`
       border: 2px solid transparent;
 
     }
-`
+`;
 
-export {SubmitButton, Container, FormContainer}
+export { SubmitButton, Container, FormContainer };
 

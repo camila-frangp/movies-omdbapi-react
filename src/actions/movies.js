@@ -6,35 +6,35 @@ export const RECEIVER_MOVIES_LIST_ERROR = 'RECEIVER_MOVIES_LIST_ERROR';
 export const RECEIVER_MOVIE_ITEM = 'RECEIVER_MOVIE_ITEM';
 
 export const startRequest = () => ({
-  type: REQUEST
-})
-
-export const movieList = (movies) => ({
-  type: RECEIVER_MOVIES_LIST,
-  movies
+  type: REQUEST,
 });
 
-export const movieListError = (error) => ({
+export const movieList = movies => ({
+  type: RECEIVER_MOVIES_LIST,
+  movies,
+});
+
+export const movieListError = error => ({
   type: RECEIVER_MOVIES_LIST_ERROR,
   isError: true,
-  error
+  error,
 });
 
-export const movieItem = (movie) => ({
+export const movieItem = movie => ({
   type: RECEIVER_MOVIE_ITEM,
-  movie
+  movie,
 });
 
-export const getMoviesList = (movie) => dispatch => {
+export const getMoviesList = movie => (dispatch) => {
   dispatch(startRequest());
   Movie.searchMovieList(movie)
     .then(response => dispatch(movieList(response)))
-    .catch(error => dispatch(movieListError({error: 'Error'})));
-}
-export const getMovieItem = (idImdb) => dispatch => {
+    .catch(error => dispatch(movieListError({ error: 'Error' })));
+};
+export const getMovieItem = idImdb => (dispatch) => {
   dispatch(startRequest());
   Movie.searchMovieItem(idImdb)
     .then(response => dispatch(movieItem(response)))
-    .catch(error => dispatch(movieListError({error: 'Error'})))
-}
+    .catch(error => dispatch(movieListError({ error: 'Error' })));
+};
 

@@ -1,18 +1,18 @@
 import IconSeach from '../../assets/search.svg';
 import styled from 'styled-components';
-import {gray, white} from './../../util/colors';
+import { gray, white } from './../../util/colors';
 
 const Container = styled.div`
     width: 100%;
 `;
 const InputCustom = styled.input`
-    ${props => props.offMargin ? `
+    ${props => (props.offMargin ? `
     margin-top: 0;
     width: 99%;
     ` : `
     margin-top: 60px;
     width: 100%;
-    `}
+    `)}
     padding-top: 10px;
     padding-bottom: 10px;
     text-indent: 35px;
@@ -33,4 +33,4 @@ const InputCustom = styled.input`
    
 `;
 
-export {Container, InputCustom};
+export { Container, InputCustom };

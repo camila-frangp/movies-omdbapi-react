@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import {Header as SearchHeader, Loading} from '../../../components'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Header as SearchHeader, Loading } from '../../../components'
 import {
   Awards,
   Container,
@@ -17,8 +18,10 @@ import {
   Title,
   Year
 } from './style';
-import {connect} from 'react-redux';
-import {getMovieItem, getMoviesList} from '../../../actions/movies';
+import {
+  getMovieItem,
+  getMoviesList
+} from '../../../actions/movies';
 
 class Index extends Component {
   

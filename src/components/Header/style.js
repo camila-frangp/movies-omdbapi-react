@@ -1,5 +1,5 @@
-import {background} from "../../util/colors";
-import styled from "styled-components";
+import { background } from '../../util/colors';
+import styled from 'styled-components';
 
 const Container = styled.div`
     order: 1;
@@ -11,14 +11,14 @@ const Container = styled.div`
     background-color: ${background};
     height: 10%;
     width: 100%;
-`
+`;
 const LogoHeader = styled.div`
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 1%;
-`
+`;
 const SearchHeader = styled.div`
     width: 100%;
     padding-right: 10px;
-`
-export {Container, LogoHeader, SearchHeader}
+`;
+export { Container, LogoHeader, SearchHeader };
