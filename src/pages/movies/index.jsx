@@ -4,7 +4,8 @@ import {
   Loading,
   MovieGrid,
   Header,
-  NotFound
+  NotFound,
+  Pagination
 } from '../../components'
 import {
   Body,
@@ -24,7 +25,7 @@ class Index extends Component {
   }
   
   searchMovie = () => {
-    this.props.moviesList(this.state.inputSearch);
+    this.props.moviesList(this.state.inputSearch, 1);
   }
   
   handleKeyPress = (event) => {
@@ -33,26 +34,27 @@ class Index extends Component {
     }
   }
   
- onItemClick = (e, item) => {
-   this.props.history.push(`/movies/${item.imdbID}`);
- }
+  onItemClick = (e, item) => {
+    this.props.history.push(`/movies/${item.imdbID}`);
+  }
   
   render() {
     const {movies} = this.props;
     return (
       <Root>
-      <Container>
         <Loading isShow={movies.isFetching}/>
-        <Header onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
-        <Body>
-        {
-          movies.Search ?
-            <MovieGrid list={movies.Search} onItemClick={this.onItemClick}/>
-            :
-            <NotFound message={movies.Error}/>
-        }
-        </Body>
-      </Container>
+        <Container>
+          <Header onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
+          <Body>
+          {
+            movies.Search ?
+              <MovieGrid list={movies.Search} onItemClick={this.onItemClick}/>
+              :
+              <NotFound message={movies.Error}/>
+          }
+          {/*<Pagination totalItems={movies.totalResults} itemsCountPerPage={10}/>*/}
+          </Body>
+        </Container>
       </Root>
     );
   }
@@ -66,7 +68,7 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    moviesList: (movie) => dispatch(getMoviesList(movie))
+    moviesList: (movie, numberPage) => dispatch(getMoviesList(movie, numberPage))
   }
 }
 

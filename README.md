@@ -1,32 +1,36 @@
 ## This Project consumes the omdbapi
 
+> This project performs the desired movie search and returns all information available in the omdbapi database.
+
+For more information, visit the link:
+- [omdbapi](http://www.omdbapi.com/)
+
 ## Project using React
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
+For more information, visit the link:
+- [Create React App](https://github.com/facebookincubator/create-react-app).
+- [Redux](https://redux.js.org/)
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm install`
+### `yarn install`
 
 After install the dependencies
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](#running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -34,5 +38,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
+### `yarn lint`
 
-
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
