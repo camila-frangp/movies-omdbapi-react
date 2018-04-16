@@ -25,9 +25,9 @@ export const movieItem = movie => ({
   movie,
 });
 
-export const getMoviesList = movie => (dispatch) => {
+export const getMoviesList = (movie, numberPage) => (dispatch) => {
   dispatch(startRequest());
-  Movie.searchMovieList(movie)
+  Movie.searchMovieList(movie, numberPage)
     .then(response => dispatch(movieList(response)))
     .catch(error => dispatch(movieListError({ error })));
 };
