@@ -17,9 +17,14 @@ import { getMoviesList } from "../../actions/movies";
 class Index extends Component {
   
   state = {
-    inputSearch: this.props.location.search.replace('?',''),
+    inputSearch: '',
   }
-  
+
+  componentDidMount(){
+    this.setState({inputSearch: this.props.location.search.replace('?','')})
+    this.searchMovie(this.props.location.search.replace('?',''), 1);
+  }
+
   onChangeInput = (name, value) => {
   }
   
