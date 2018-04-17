@@ -24,18 +24,23 @@ class Index extends Component {
     this.setState({[name]: value});
   }
   
-  searchMovie = () => {
-    this.props.moviesList(this.state.inputSearch, 1);
+  searchMovie = (pageid) => {
+    this.props.moviesList(this.state.inputSearch, pageid);
   }
   
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      this.searchMovie();
+      this.searchMovie(1);
     }
   }
   
   onItemClick = (e, item) => {
     this.props.history.push(`/movies/${item.imdbID}`);
+  }
+  
+  onPageChange = (page) => {
+    this.searchMovie(page);
+  
   }
   
   render() {
@@ -52,8 +57,8 @@ class Index extends Component {
               :
               <NotFound message={movies.Error}/>
           }
-          {/*<Pagination totalItems={movies.totalResults} itemsCountPerPage={10}/>*/}
           </Body>
+          <Pagination totalItems={movies.totalResults} itemsCountPerPage={10} onPageChange={this.onPageChange}/>
         </Container>
       </Root>
     );
