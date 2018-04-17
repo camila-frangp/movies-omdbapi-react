@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Label} from './style';
+import {Label, Container} from './style';
 
 class Pagination extends Component {
 
@@ -29,19 +29,24 @@ class Pagination extends Component {
     });
   }
   
+  handleClick = (event, page) => {
+    this.props.onPageChange(page);
+  }
+  
   showPageNumbers = (pageNumbers) => {
     return (
-      <p>
+      <Container>
         {pageNumbers.map(number =>
             <Label
               key={number}
               id={number}
+              onClick={e => this.handleClick(e, number)}
             >
               {number}
             </Label>
           )
         }
-      </p>
+      </Container>
     )
   }
   
@@ -56,8 +61,9 @@ export default Pagination;
 Pagination.propTypes = {
   totalItems: PropTypes.string,
   itemsCountPerPage: PropTypes.number,
+  onPageChange: PropTypes.func.isRequired
 };
 Pagination.defaultProps = {
-  totalItems: 10,
-  itemsCountPerPage: 10,
+  totalItems: '0',
+  itemsCountPerPage: '0',
 }

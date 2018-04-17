@@ -19,9 +19,9 @@ function movies(state = initialState, action) {
       };
     case RECEIVER_MOVIES_LIST:
       return {
-        item: state.item,
         ...action.movies,
         isFetching: false,
+        item: { ...state.item },
       };
     case RECEIVER_MOVIES_LIST_ERROR:
       return {
