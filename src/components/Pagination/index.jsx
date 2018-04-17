@@ -6,6 +6,7 @@ class Pagination extends Component {
 
   state = {
     pageNumbers: [],
+    clicked: false,
   }
   
   componentDidMount(){
