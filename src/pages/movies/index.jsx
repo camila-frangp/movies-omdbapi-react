@@ -42,7 +42,6 @@ class Index extends Component {
   }
   
   onPageChange = (page) => {
-    console.log(this.state);
     this.searchMovie(this.state.inputSearch, page);
   
   }
