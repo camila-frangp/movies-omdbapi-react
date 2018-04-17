@@ -17,20 +17,23 @@ import { getMoviesList } from "../../actions/movies";
 class Index extends Component {
   
   state = {
-    inputSearch: ''
+    inputSearch: this.props.location.search.replace('?',''),
   }
   
   onChangeInput = (name, value) => {
-    this.setState({[name]: value});
   }
   
-  searchMovie = (pageid) => {
-    this.props.moviesList(this.state.inputSearch, pageid);
+  searchMovie = (movie, pageid) => {
+    this.props.moviesList(movie, pageid);
   }
   
   handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      this.searchMovie(1);
+      this.setState({inputSearch: event.target.value});
+      this.searchMovie(event.target.value, 1);
+      this.props.history.replace({
+        search: event.target.value,
+      });
     }
   }
   
@@ -39,7 +42,8 @@ class Index extends Component {
   }
   
   onPageChange = (page) => {
-    this.searchMovie(page);
+    console.log(this.state);
+    this.searchMovie(this.state.inputSearch, page);
   
   }
   

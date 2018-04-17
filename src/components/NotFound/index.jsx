@@ -17,5 +17,8 @@ export default function NotFound(props) {
   );
 }
 NotFound.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.string,
 };
+NotFound.defaultProps = {
+  message: 'Sorry, Not Found!!',
+}
