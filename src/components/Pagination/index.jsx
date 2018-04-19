@@ -6,7 +6,7 @@ class Pagination extends Component {
 
   state = {
     pageNumbers: [],
-    clicked: false,
+    itemSelected: 1,
   }
   
   componentDidMount(){
@@ -31,7 +31,17 @@ class Pagination extends Component {
   }
   
   handleClick = (event, page) => {
+    this.setState({itemSelected: page});
     this.props.onPageChange(page);
+  }
+  
+  highlightSelectedItem = (page) => {
+    const {itemSelected} = this.state;
+    if (page === itemSelected) {
+      return {fontWeight: 'bold', fontSize: 'large'};
+    } else {
+      return {fontWeight: 'normal', fontSize: 'small'};
+    }
   }
   
   showPageNumbers = (pageNumbers) => {
@@ -41,6 +51,7 @@ class Pagination extends Component {
             <Label
               key={number}
               id={number}
+              style={this.highlightSelectedItem(number)}
               onClick={e => this.handleClick(e, number)}
             >
               {number}

@@ -18,7 +18,7 @@ const Root = styled.div`
 `;
 const Body = styled.div`
     order: 2;
-    height: 85%;
+    height: 83%;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
