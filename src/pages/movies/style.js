@@ -6,7 +6,7 @@ const Container = styled.div`
     width: 90%;
     display: flex;
     background: ${white}
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
 `;
 const Root = styled.div`
@@ -18,7 +18,7 @@ const Root = styled.div`
 `;
 const Body = styled.div`
     order: 2;
-    height: 83%;
+    flex: 1 1 0;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
