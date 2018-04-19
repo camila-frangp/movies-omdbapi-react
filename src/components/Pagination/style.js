@@ -13,6 +13,6 @@ const Container = styled.p`
   text-align: center;
   overflow-y: auto;
   white-space: nowrap;
-  height: 5%;
+  flex: 1 1 1;
   `;
 export { Label, Container };

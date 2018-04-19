@@ -7,8 +7,10 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     background-color: ${background};
-    height: 10%;
+    flex: 1 1 1;
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `;
 const LogoHeader = styled.div`
     padding-top: 10px;
