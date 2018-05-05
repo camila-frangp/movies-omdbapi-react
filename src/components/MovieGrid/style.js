@@ -1,33 +1,32 @@
 import styled from 'styled-components';
-import { grayTransparent, primaryColor } from './../../util/colors';
+import { white, grayTransparent, primaryColor } from './../../util/colors';
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 30%;
-  width: 100%;
-  height: 100%;
-  grid-gap: 10px;
+  display: flex;
+  flex: 1 1 0;
   justify-items: center;
-  @media only screen and (min-width: 600px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
+  flex-flow: row wrap;
+  overflow: overlay;
+  justify-content: center;
 `;
 
 const Item = styled.div`
-  width: 95%;
-  height: 100%;
+  width: 100px;
   display: flex;
-  flex-direction: column;
   position: relative;
+  border: 1px solid ${white};
   &:hover {
     border: 1px solid ${primaryColor};
   }
-  
-  
+  @media only screen and (min-width: 768px) {
+      width: 150px;
+  }
+  @media only screen and (min-width: 992px) {
+    width: 250px;
+  }
+  @media only screen and (min-width: 1200px) {
+    width: 350px;
+  }
   `;
 const MovieCover = styled.img`
   width: 100%;

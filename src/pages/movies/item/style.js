@@ -82,7 +82,6 @@ const MetascoreLabel = styled.span`
    color: ${white};
    padding: 1px 4px;
    vertical-align: baseline;
-
 `;
 const Plot = styled.p`
   line-height: 25px;
@@ -95,8 +94,6 @@ const Awards = styled.div`
   color: ${white}
 `;
 const ContainerSearchHeader = styled.div`
-  padding-bottom: 2%;
-  padding-top: 2%;
   background: ${white}
 `;
 export {

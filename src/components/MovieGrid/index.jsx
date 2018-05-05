@@ -12,7 +12,7 @@ export default function MovieGrid(props) {
   return (
     <Container>
       {props.list.map(item =>
-        (<Item key={item.imdbID} onClick={e => props.onItemClick(e, item)}>
+        (<Item key={item.imdbID} onLoad={() => console.log('finish image')} onClick={e => props.onItemClick(e, item)}>
           <MovieCover src={item.Poster} />
           <Description>
             <Text>{item.Title}</Text>
@@ -22,5 +22,5 @@ export default function MovieGrid(props) {
   );
 }
 MovieGrid.propTypes = {
-  list: PropTypes.array,
+  list: PropTypes.array.isRequired,
 };

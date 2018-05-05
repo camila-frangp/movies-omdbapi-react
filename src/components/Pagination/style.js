@@ -7,12 +7,10 @@ const Label = styled.span`
   `;
 
 const Container = styled.p`
-  order: 3;
   word-break: break-all;
   width: 100%;
   text-align: center;
   overflow-y: auto;
   white-space: nowrap;
-  flex: 1 1 1;
   `;
 export { Label, Container };

@@ -3,14 +3,16 @@ import { connect } from 'react-redux';
 import {
   Loading,
   MovieGrid,
-  Header,
+  SearchHeader,
   NotFound,
-  Pagination
+  Pagination,
 } from '../../components'
 import {
   Body,
   Container,
-  Root
+  Root,
+  Footer,
+  Header
 } from './style'
 import { getMoviesList } from "../../actions/movies";
 
@@ -57,7 +59,9 @@ class Index extends Component {
       <Root>
         <Loading isShow={movies.isFetching}/>
         <Container>
-          <Header onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
+          <Header>
+            <SearchHeader onKeyPress={this.handleKeyPress} onChangeInput={this.onChangeInput}/>
+          </Header>
           <Body>
           {
             movies.Search ?
@@ -66,7 +70,9 @@ class Index extends Component {
               <NotFound message={movies.Error}/>
           }
           </Body>
-          <Pagination totalItems={movies.totalResults} itemsCountPerPage={10} onPageChange={this.onPageChange}/>
+          <Footer>
+            <Pagination totalItems={movies.totalResults} itemsCountPerPage={10} onPageChange={this.onPageChange}/>
+          </Footer>
         </Container>
       </Root>
     );

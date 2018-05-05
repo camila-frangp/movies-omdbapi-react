@@ -6,15 +6,24 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height:100%;
+    height: 100%;
     background-color: ${background};
 `;
 const FormContainer = styled.form`
     width: 50%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-flow: column wrap;
+    text-align: center;
 `;
+const SearchInputContainer = styled.div`
+    display: flex;
+    flex: 1 1 1;
+    margin-top: 60px;
+`;
+const SubmitContainer = styled(SearchInputContainer)`
+    margin-top: 0;
+    justify-content: center;
+`
 const SubmitButton = styled.button`
     width: 50%;
     padding: 10px;
@@ -32,5 +41,5 @@ const SubmitButton = styled.button`
     }
 `;
 
-export { SubmitButton, Container, FormContainer };
+export { SubmitButton, Container, FormContainer, SearchInputContainer, SubmitContainer };
 

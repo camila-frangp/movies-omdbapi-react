@@ -1,5 +1,5 @@
 {
-  "name": "challenge-entria",
+  "name": "react-omdbapi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

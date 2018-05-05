@@ -17,14 +17,25 @@ const Root = styled.div`
   background: ${secondGray}
 `;
 const Body = styled.div`
+    border: 1px black solid;
     order: 2;
     flex: 1 1 0;
-    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 `;
+const Footer = styled.div`
+    border: 1px yellow solid;
+    order: 3;
+    flex: 1 1 1;
+    display: flex;
+`
+const Header = styled.div`
+    border: 1px green solid;
+    order: 2;
+    flex: 1 1 1;
+    display: flex;
+`
 
-
-export { Container, Body, Root };
+export { Container, Body, Root, Footer, Header };
 

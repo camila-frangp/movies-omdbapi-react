@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Header as SearchHeader, Loading, NotFound } from '../../../components'
+import { SearchHeader, Loading, NotFound } from '../../../components'
 import {
   Awards,
   Container,
