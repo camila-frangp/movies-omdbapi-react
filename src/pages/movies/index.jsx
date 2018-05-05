@@ -25,6 +25,7 @@ class Index extends Component {
   componentDidMount(){
     this.setState({inputSearch: decodeURI(this.props.location.search.replace('?',''))})
     this.searchMovie(decodeURI(this.props.location.search.replace('?','')), 1);
+    
   }
 
   onChangeInput = (name, value) => {

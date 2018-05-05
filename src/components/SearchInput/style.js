@@ -5,7 +5,6 @@ import { gray, white } from './../../util/colors';
 const Container = styled.div`
     display: flex;
     flex: 1 1 0;
-    border: 1px green solid;
 `;
 const InputCustom = styled.input`
     width: 100%;
